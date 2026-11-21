@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "macos_media_keys_init"
+compatibility_minimum = "4.3"
+reloadable = false
+
+[libraries]
+macos.debug = "res://addons/macos_media_keys/bin/libmedia_keys.dylib"
+macos.release = "res://addons/macos_media_keys/bin/libmedia_keys.dylib"

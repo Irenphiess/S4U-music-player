@@ -1,0 +1,530 @@
+[gd_scene load_steps=36 format=3 uid="uid://bbw2s13iccuqo"]
+
+[ext_resource type="Script" path="res://随身听.gd" id="1_vq5op"]
+[ext_resource type="Texture2D" uid="uid://d2hu5hbradqrv" path="res://assets/texture/MDPlayer_Box.png" id="1_xut22"]
+[ext_resource type="Texture2D" uid="uid://ci0apiu2mgvjn" path="res://assets/texture/MDPlayer_MD.png" id="2_8boe2"]
+[ext_resource type="Texture2D" uid="uid://6xxbmya1pxfi" path="res://assets/texture/MDPlayer_Top.png" id="3_78drh"]
+[ext_resource type="Texture2D" uid="uid://bibrd5syhf8yj" path="res://assets/texture/CD_front/便利店后武装少女两人.png" id="5_31llx"]
+[ext_resource type="Texture2D" uid="uid://bn2fqtmbxntpw" path="res://assets/texture/随机.png" id="5_kic3o"]
+[ext_resource type="Texture2D" uid="uid://61mtfugcrl48" path="res://assets/texture/上一首.png" id="5_ujook"]
+[ext_resource type="Texture2D" uid="uid://bw0jh8gkvk3q6" path="res://assets/texture/MDPlayer_Bottom.png" id="6_16xi6"]
+[ext_resource type="Texture2D" uid="uid://dxbettu0aebo" path="res://assets/texture/随机_按下.png" id="6_801vp"]
+[ext_resource type="Texture2D" uid="uid://70rcnqrqxbiq" path="res://assets/texture/上一首_按下.png" id="6_wgm47"]
+[ext_resource type="Texture2D" uid="uid://dlcwshh5kd4ak" path="res://assets/texture/下一首.png" id="7_6ondb"]
+[ext_resource type="Texture2D" uid="uid://dxqoq358x5jti" path="res://assets/texture/下一首_按下.png" id="8_c08o1"]
+[ext_resource type="Texture2D" uid="uid://du0lxlm647peo" path="res://assets/texture/播放.png" id="9_k1xu2"]
+[ext_resource type="Texture2D" uid="uid://bvx8o3lcio043" path="res://assets/texture/播放_按下.png" id="10_afci8"]
+[ext_resource type="FontFile" uid="uid://3vsdos4on7yw" path="res://assets/font/unifont-15.1.04.otf" id="17_7imkx"]
+[ext_resource type="Texture2D" uid="uid://bfgrdwrekh4rn" path="res://assets/texture/UI/boo.png" id="17_f8u1e"]
+[ext_resource type="FontFile" uid="uid://sxdqku7scaur" path="res://assets/font/(mod)Fusion-Pixel-12px.otf" id="17_qjkhq"]
+[ext_resource type="Texture2D" uid="uid://ca63yfm846npg" path="res://assets/texture/UI/pin.png" id="28_5co77"]
+[ext_resource type="Texture2D" uid="uid://cdcglqblscu7n" path="res://assets/texture/UI/pin_hover.png" id="29_8kn42"]
+[ext_resource type="Texture2D" uid="uid://xgas2pn4sgwh" path="res://assets/texture/UI/window.png" id="30_nxh2s"]
+[ext_resource type="Texture2D" uid="uid://dp1ycg3gby4nf" path="res://assets/texture/UI/window_hover.png" id="31_lo1wv"]
+[ext_resource type="Texture2D" uid="uid://cnpbncoiovoqt" path="res://assets/texture/+.png" id="32_808o7"]
+[ext_resource type="Texture2D" uid="uid://cbvb2ovsyrqam" path="res://assets/texture/+_pressed.png" id="33_1bda8"]
+[ext_resource type="Texture2D" uid="uid://bdxbktcnwioay" path="res://assets/texture/-.png" id="34_ghnjo"]
+[ext_resource type="Texture2D" uid="uid://b7s2tjo0m856u" path="res://assets/texture/-_pressed.png" id="35_y4vpx"]
+
+[sub_resource type="Animation" id="Animation_wueec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MdPlayerMd:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("唱片:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("唱片:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("唱片:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MdPlayerMd:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MdPlayerMd:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -17)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel/歌名显示:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dffg1"]
+resource_name = "插入碟片"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("唱片:visible")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("唱片:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -16), Vector2(4, -2)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"CD已插入"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MdPlayerMd:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MdPlayerMd:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -17), Vector2(4, -2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/歌名显示:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_fdxvm"]
+resource_name = "播放_0"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MdPlayerMd:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.28319, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MdPlayerMd:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7801e"]
+resource_name = "播放_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("唱片:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("唱片:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("唱片:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tj36o"]
+resource_name = "非播放_0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MdPlayerMd:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MdPlayerMd:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("唱片:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4r7x2"]
+_data = {
+"RESET": SubResource("Animation_wueec"),
+"插入碟片": SubResource("Animation_dffg1"),
+"播放_0": SubResource("Animation_fdxvm"),
+"播放_1": SubResource("Animation_7801e"),
+"非播放_0": SubResource("Animation_tj36o")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ydc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toekm"]
+size = Vector2(29, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chwuo"]
+size = Vector2(3, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0w161"]
+texture = ExtResource("17_f8u1e")
+texture_margin_left = 10.0
+texture_margin_top = 6.0
+texture_margin_right = 10.0
+texture_margin_bottom = 8.0
+
+[node name="随身听" type="Node2D"]
+script = ExtResource("1_vq5op")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="音频播放" type="AudioStreamPlayer2D" parent="."]
+
+[node name="MdPlayerBottom" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-5.5, -2)
+texture = ExtResource("6_16xi6")
+
+[node name="MdPlayerMd" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -17)
+texture = ExtResource("2_8boe2")
+
+[node name="唱片" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -2)
+texture = ExtResource("5_31llx")
+
+[node name="MdPlayerBox" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -2)
+texture = ExtResource("1_xut22")
+
+[node name="MdPlayerTop" type="Sprite2D" parent="."]
+position = Vector2(13.5, -2)
+texture = ExtResource("3_78drh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(79, -7)
+zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4r7x2")
+}
+autoplay = "非播放_0"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4r7x2")
+}
+autoplay = "播放_0"
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4r7x2")
+}
+
+[node name="随机播放" type="TextureButton" parent="."]
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 20.0
+toggle_mode = true
+tooltip_text = "随机播放模式：按下随机切歌，抬起顺序切歌"
+texture_normal = ExtResource("5_kic3o")
+texture_pressed = ExtResource("6_801vp")
+
+[node name="上一首" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 12.0
+offset_bottom = 20.0
+texture_normal = ExtResource("5_ujook")
+texture_pressed = ExtResource("6_wgm47")
+
+[node name="下一首" type="TextureButton" parent="."]
+offset_left = 21.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 20.0
+texture_normal = ExtResource("7_6ondb")
+texture_pressed = ExtResource("8_c08o1")
+
+[node name="播放" type="TextureButton" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 20.0
+texture_normal = ExtResource("9_k1xu2")
+texture_pressed = ExtResource("10_afci8")
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 1
+offset_left = 9.0
+offset_top = -11.0
+offset_right = 38.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x2ydc")
+
+[node name="Area2D" type="Area2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Area2D"]
+position = Vector2(14.5, 8.5)
+shape = SubResource("RectangleShape2D_toekm")
+
+[node name="歌名显示" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 17.0
+
+[node name="Label" type="Label" parent="Panel/歌名显示"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.188235, 0.168627, 1)
+theme_override_fonts/font = ExtResource("17_7imkx")
+theme_override_font_sizes/font_size = 16
+text = "Way home"
+
+[node name="Control" type="Panel" parent="Panel/歌名显示"]
+layout_mode = 2
+
+[node name="Area2D" type="Area2D" parent="Panel/歌名显示/Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/歌名显示/Control/Area2D"]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_chwuo")
+
+[node name="唱片名" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 218.0
+offset_top = 62.0
+offset_right = 332.0
+offset_bottom = 92.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="显示唱片名" type="Label" parent="唱片名"]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+anchor_left = 0.667
+anchor_top = 0.906
+anchor_right = 0.667
+anchor_bottom = 0.906
+offset_left = 32.962
+offset_top = -47.18
+offset_right = 65.962
+offset_bottom = -21.18
+theme_override_colors/font_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_fonts/font = ExtResource("17_qjkhq")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_0w161")
+text = "阳"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="CD盘集合" type="Node2D" parent="."]
+position = Vector2(60, -37)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -57.0
+offset_top = -54.0
+offset_right = -41.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("28_5co77")
+texture_pressed = ExtResource("29_8kn42")
+texture_hover = ExtResource("28_5co77")
+tooltip_text = "记住窗口位置和大小（重启后恢复）"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = -54.0
+offset_right = -32.0
+offset_bottom = -38.0
+scale = Vector2(0.5, 0.5)
+toggle_mode = true
+texture_normal = ExtResource("30_nxh2s")
+texture_pressed = ExtResource("30_nxh2s")
+texture_hover = ExtResource("31_lo1wv")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = -51.0
+offset_top = -37.0
+offset_right = -43.0
+offset_bottom = -27.0
+texture_normal = ExtResource("32_808o7")
+texture_pressed = ExtResource("33_1bda8")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = -51.0
+offset_top = -27.0
+offset_right = -43.0
+offset_bottom = -17.0
+texture_normal = ExtResource("34_ghnjo")
+texture_pressed = ExtResource("35_y4vpx")
+
+[connection signal="finished" from="音频播放" to="." method="当前歌曲播放完成"]
+[connection signal="toggled" from="随机播放" to="." method="切换随机模式"]
+[connection signal="pressed" from="上一首" to="." method="上一首"]
+[connection signal="pressed" from="下一首" to="." method="下一首"]
+[connection signal="pressed" from="播放" to="." method="播放"]
+[connection signal="area_entered" from="Panel/Area2D" to="." method="文字离开"]
+[connection signal="toggled" from="TextureButton" to="." method="记忆窗口布局"]
+[connection signal="toggled" from="TextureButton2" to="." method="修改窗口大小"]
+[connection signal="pressed" from="TextureButton3" to="." method="放大窗口"]
+[connection signal="pressed" from="TextureButton4" to="." method="缩小窗口"]
